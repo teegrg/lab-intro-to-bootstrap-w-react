@@ -5,8 +5,8 @@ const Navbar =() => {
         <h1 className="">Travel <span className="script-font text-warning" >Blog</span></h1>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">           
-            <a className="nav-link mx-4" href="#">About</a>
-            <a className="nav-link" href="#">Popular Post</a>           
+            <p className="nav-link text-center">About</p>
+            <p className="nav-link text-center" >Popular Post</p>           
           </div>
         </div>
       </div>

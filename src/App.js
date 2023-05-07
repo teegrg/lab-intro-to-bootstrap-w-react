@@ -6,13 +6,13 @@ import Footer from "./components/Footer";
 import postData from "./data/posts.json";
 import Card from "./components/Card";
 import images from "./images";
-import { useState } from "react";
+
 
 
 function App() {
 
   const pic = (location) => {
-    Object.keys(images).find(key => key == location)
+    Object.keys(images).find(key => key === location)
   }
 
 
