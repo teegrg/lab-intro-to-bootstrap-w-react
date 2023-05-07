@@ -12,10 +12,12 @@ import { useState } from "react";
 function App() {
 
   const pic = (location) => {
-    console.log(); (Object.keys(images).find(key => key == location))
+    Object.keys(images).find(key => key == location)
   }
 
-  // const [card, setCard] = useState("")
+  // const pic = postData.location.split(" ").join("-").toLowerCase();
+
+   const [card, setCard] = useState(postData)
 
   // function search() {
   //   if (postData.includes(handlerChange)){
@@ -24,20 +26,29 @@ function App() {
   // }
 
   return (
-    <main >
+    <main>
       <Navbar />
       <Header />
       <SearchBar />
-      {postData.map(data =>
-        <Card
-          key={data.id}
-          image={pic}
-          title={data.title}
-          location={data.location}
-          content={data.content}
-        />
-      )}
-      <SideBar postData={postData} />
+      <div className="container">
+        <div className="row row-cols-1 row-cols-lg-2 mx-5">
+          <div className="col">
+            
+            {card.map(data =>
+              <Card
+                key={data.id}
+                image={pic(data.location)}
+                title={data.title}
+                location={data.location}
+                content={data.content}
+              />
+            )}
+          </div>
+          <div className="col-4">
+            <SideBar postData={postData} />
+          </div>
+        </div>
+      </div>
       <Footer />
     </main>
   )

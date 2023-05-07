@@ -10,10 +10,12 @@ const SideBar = ({ postData }) => {
     }
 
     return (
-        <table className="table table-hover">
-            <thead>
+    <>
+        <h2>Posts by<span className="text-warning"> location</span></h2>
+        <table className="table table-hover">         
+            <thead> 
                 <tr>
-                    <th scope="col" className="text-warning">Location</th>
+                    <th scope="col">Location</th>
                     <th scope="col">Posts</th>
                 </tr>
             </thead>
@@ -24,6 +26,7 @@ const SideBar = ({ postData }) => {
                 </tr>
             </tbody>)}
         </table>
+    </>
     )
 }
 

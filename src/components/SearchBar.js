@@ -1,7 +1,7 @@
 
 function handlerClick(event) {
   // event.preventDefault()
-  
+
 }
 
 function handlerChange(event) {
@@ -9,19 +9,18 @@ function handlerChange(event) {
 }
 
 
-const SearchBar =() => {
-    return (
-<nav className="navbar">
-  <div className="container-fluid">
-  <label htmlFor="search">Search posts by location...</label>
-    <form className="d-flex" role="search">
-      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" onChange={handlerChange}/>
-      <button className="btn btn-warning "  onClick={handlerClick}>Cancel</button>
-    </form>
-  </div>
-</nav>
-       
-    )
+const SearchBar = () => {
+  return (
+    <div className="container mt-4 mb-2">
+      <div className="row ">
+        <div className="col-auto pt-1" htmlFor="search">Search posts by location...</div>
+        <input className="form-control me-3 col" type="search" placeholder="Search" aria-label="Search" onChange={handlerChange} />
+        <button className="btn btn-warning col-auto" onClick={handlerClick}>Cancel</button>
+      </div>
+    </div>
+   
+
+  )
 }
 
-export default  SearchBar;
+export default SearchBar;

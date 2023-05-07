@@ -1,6 +1,10 @@
 const Header =() => {
     return (
-        <h1 className=" script-font text-center bg-body-tertiary py-5">Travel is the only thing you buy that makes you richer..</h1>
+        <div className="d-none d-lg-block bg-body-tertiary py-5">
+            <h1 className=" script-font text-center ">
+                Travel is the only thing you buy that makes you richer..
+            </h1>
+        </div>
     )
 }
 
