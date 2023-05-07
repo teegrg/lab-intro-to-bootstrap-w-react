@@ -15,15 +15,6 @@ function App() {
     Object.keys(images).find(key => key == location)
   }
 
-  // const pic = postData.location.split(" ").join("-").toLowerCase();
-
-   const [card, setCard] = useState(postData)
-
-  // function search() {
-  //   if (postData.includes(handlerChange)){
-  //     setCard()
-  //   }
-  // }
 
   return (
     <main>
@@ -34,7 +25,7 @@ function App() {
         <div className="row row-cols-1 row-cols-lg-2 mx-5">
           <div className="col">
             
-            {card.map(data =>
+            {postData.map(data =>
               <Card
                 key={data.id}
                 image={pic(data.location)}
