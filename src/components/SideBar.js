@@ -19,7 +19,7 @@ const SideBar = ({ postData }) => {
                     <th scope="col">Posts</th>
                 </tr>
             </thead>
-            {Object.keys(obj).map(key => <tbody>
+            {Object.keys(obj).map((key,index) => <tbody key={index}>
                 <tr>
                     <th scope="row">{key}</th>
                     <td>{obj[key]}</td>
