@@ -21,6 +21,7 @@ function App() {
     }else if (el.location.toLowerCase().includes(search.toLocaleLowerCase())){
       return el
     }
+    return false;//added to satisfy netlify issue//
   })
   
 
