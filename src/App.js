@@ -5,33 +5,44 @@ import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import postData from "./data/posts.json";
 import Card from "./components/Card";
-import images from "./images";
-
+import { useState } from "react";
 
 
 function App() {
+  const [search, setSearch] = useState("") 
 
-  const pic = (location) => {
-    Object.keys(images).find(key => key === location)
+  function handlerChange(event) {
+    setSearch(event.target.value);
   }
+
+  const searchItem = postData.filter(el => {
+    if (search === ""){
+      return el
+    }else if (el.location.toLowerCase().includes(search.toLocaleLowerCase())){
+      return el
+    }
+  })
+  
+
+  function handlerClick() {
+    setSearch("") 
+  }
+
 
 
   return (
     <main>
       <Navbar />
       <Header />
-      <SearchBar />
+      <SearchBar handlerChange={handlerChange} handlerClick={handlerClick}/>
       <div className="container">
         <div className="row row-cols-1 row-cols-lg-2 mx-5">
           <div className="col">
             
-            {postData.map(data =>
+            {searchItem.map(data =>
               <Card
                 key={data.id}
-                image={pic(data.location)}
-                title={data.title}
-                location={data.location}
-                content={data.content}
+                data={data}
               />
             )}
           </div>

@@ -1,9 +1,10 @@
-
-
 import { useState } from 'react';
+import images from "../images/index"
 
-const Card = ({ title, location, content, image }) => {
+const Card = ({data}) => {
   const [showFullContent, setShowFullContent] = useState(false);
+
+  const pic = data.location.split(" ").join("-").toLowerCase()
 
 
 
@@ -14,11 +15,13 @@ const Card = ({ title, location, content, image }) => {
   return (
     <div className="card m-2">
       <div className="card-body">
-        <img src={image} alt="city" />
-        <h3>{title}</h3>
-        <p>{location}</p>
+        <img 
+        src={images[pic]} className="card-img-top img-fluid object-fit-cover post-image-height"
+        alt="city" />
+        <h3>{data.title}</h3>
+        <p>{data.location}</p>
         <p className="card-text text-tur">
-          {showFullContent ? content : `${content.slice(0, 57)}...`}
+          {showFullContent ? data.content : `${data.content.slice(0, 57)}...`}
         </p>
         {!showFullContent && (
           <button className="btn btn-warning" onClick={handleButtonClick}>
