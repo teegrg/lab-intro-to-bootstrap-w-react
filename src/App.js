@@ -17,7 +17,7 @@ function App() {
 
   const searchItem = postData.filter(el => {
     if (search === ""){
-      return el
+      return true //instead of el cos staisfly netlifly deployment issue//
     }else if (el.location.toLowerCase().includes(search.toLocaleLowerCase())){
       return el
     }
